@@ -1,13 +1,16 @@
-#Escriba un programa que entregue todos los divisores del número entero ingresado:
+#Un viajero desea saber cuánto tiempo tomó un viaje que realizó. Él tiene la duración en minutos de cada uno de los tramos del viaje.
+#Desarrolle un programa que permita ingresar los tiempos de viaje de los tramos y entregue como resultado el tiempo total de viaje en formato horas:minutos.
 
-def get_dividers (number):
-    dividers =[]
-    for i in range (1, number + 1):
-        if number % i == 0:
-            dividers.append(i)
-    return dividers
 
-number = int(input("enter number: "))
+total_minutes = 0
 
-dividers = get_dividers(number)
-print("divider of", number, "are:", " ".join(map(str, dividers)))
+while True:
+    distance = int(input("travel time (0 to end): "))
+    if distance == 0:
+        break
+    total_minutes = total_minutes + distance
+
+hours = total_minutes // 60
+minutes = total_minutes % 60
+
+print (f"total travel time {hours}:{minutes:02d} hours")
