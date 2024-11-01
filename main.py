@@ -1,6 +1,13 @@
-#Escriba un programa que muestre una tabla de multiplicar como la siguiente:
+#Escriba un programa que entregue todos los divisores del número entero ingresado:
 
-for j in range (1, 11):
-    for i in range (1, 11):
-        print (i*j, end="\t")
-    print()
+def get_dividers (number):
+    dividers =[]
+    for i in range (1, number + 1):
+        if number % i == 0:
+            dividers.append(i)
+    return dividers
+
+number = int(input("enter number: "))
+
+dividers = get_dividers(number)
+print("divider of", number, "are:", " ".join(map(str, dividers)))
